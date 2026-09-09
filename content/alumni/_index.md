@@ -1,0 +1,80 @@
+---
+title: "Alumni"
+description: "Alumni and legends of the club, we are indebted to them for their efforts!"
+members:
+
+  - name: "Nabil Husain"
+    role: "Club legend"
+    batch: "MS21"
+    image: "/team/nabil.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+  - name: "Nikunj Dimri"
+    role: "Quizmaster"
+    batch: "MS21"
+    image: "/team/nikunj.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+  - name: "Sparsha Ray"
+    role: "Astrophotographer"
+    batch: "MS21"
+    image: "/team/sparsha.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+  - name: "Veera Vaishnavi Godithi"
+    role: "Ex Co-convener (2022-23)"
+    batch: "MS21"
+    image: "/team/vaishnavi.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+  - name: "Tarang Vashisht"
+    role: "Ex Convener (2022-23)"
+    batch: "MS21"
+    image: "/team/tarang.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+  - name: "Aswin Nair"
+    role: "Ex Co-convener (2022-23)"
+    batch: "MS20"
+    image: "/team/aswin.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+  - name: "Sanatan Jaminy"
+    role: "Ex Co-convener (2021-22)"
+    batch: "MS19"
+    image: "/team/sanatan.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+  - name: "Prajakta Mane"
+    role: "Ex Convener (2021-22)"
+    batch: "MS19"
+    image: "/team/prajakta.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+  - name: "Anshuman Acharya"
+    role: "Ex Co-convener (2017-18)"
+    batch: "MS19"
+    image: "/team/anshuman.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
+
+
+---

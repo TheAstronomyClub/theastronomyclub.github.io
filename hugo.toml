@@ -1,0 +1,52 @@
+# Example site configuration for the Blank Magazine theme.
+# Run it from the repository root with:
+#   hugo server --source exampleSite --themesDir ../..
+baseURL = "https://example.com/"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "Astronomy Club of IISERM"
+theme = "blank-magazine"
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 9
+
+[params]
+  description = ""
+  author = "The Astronomy Club of IISER Mohali"
+  authorBio = ""
+  slogan = ""
+  email = "astronomyclub@iisermohali.ac.in"
+  instagram = "https://instagram.com/"
+  twitter = "https://twitter.com/"
+  facebook = "https://facebook.com/"
+  mainSections = ["posts"]
+
+[menu]
+  [[menu.main]]
+    name = "About Us"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    name = "Gallery"
+    url = "/gallery/"
+    weight = 2
+  [[menu.main]]
+    name = "Team"
+    url = "/team/"
+    weight = 3
+  [[menu.main]]
+    name = "Alumni"
+    url = "/alumni/"
+    weight = 4
+  [[menu.main]]
+    name = "Resources"
+    url = "/resources/"
+    weight = 5
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
