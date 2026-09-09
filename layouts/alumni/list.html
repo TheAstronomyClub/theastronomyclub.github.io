@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="page-header">
+  <div class="container">
+    <p class="page-eyebrow"></p>
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
+    <div class="page-divider"></div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <div class="team-grid">
+      {{ range .Params.members }}
+      <article class="team-card">
+        <img class="team-photo" src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+        <h2 class="team-name">{{ .name }}</h2>
+        <p class="team-role">{{ .role }}</p>
+        <p class="team-batch">{{ .batch }}</p>
+
+        <div class="team-links">
+          {{ with .email }}<a href="mailto:{{ . }}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>{{ end }}
+          {{ with .instagram }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{ end }}
+          {{ with .linkedin }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>{{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

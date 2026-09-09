@@ -1,0 +1,27 @@
+{{/*
+  gallery-photos.html
+  Collect all images for a gallery and return a slice of URL strings.
+  Source 1: local Page Bundle image resources (.Resources.ByType "image"),
+            sorted by filename in ascending order.
+            Put images directly in the gallery folder; no need to list each one in Markdown.
+  Source 2: front matter photos, either external URLs or manual paths,
+            appended after local images.
+  Usage: {{ $photos := partial "gallery-photos.html" . }}
+*/}}
+{{ $photos := slice }}
+
+{{/* 1. Local images in the gallery folder. Only Page Bundles have .Resources. */}}
+{{ with .Resources.ByType "image" }}
+  {{ range sort . "Name" "asc" }}
+    {{ $photos = $photos | append .RelPermalink }}
+  {{ end }}
+{{ end }}
+
+{{/* 2. Photos declared in front matter, for external or static paths. */}}
+{{ with .Params.photos }}
+  {{ range . }}
+    {{ $photos = $photos | append . }}
+  {{ end }}
+{{ end }}
+
+{{ return $photos }}
