@@ -22,6 +22,7 @@
           {{ with .email }}<a href="mailto:{{ . }}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>{{ end }}
           {{ with .instagram }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{ end }}
           {{ with .linkedin }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>{{ end }}
+          {{ with .website }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Website"><i class="fa-solid fa-globe"></i></a>{{ end }}
         </div>
       </article>
       {{ end }}
