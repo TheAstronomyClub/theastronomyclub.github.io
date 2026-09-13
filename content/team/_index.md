@@ -7,6 +7,7 @@ members:
     batch: "MS25"
     image: "/team/IMG-20260526-WA0013.jpg"
     email: "salianraghavendra357@gmail.com"
+    linkedin:"example"
   
   - name: "Ujjvall Sharma"
     role: "Convener"
