@@ -2,13 +2,14 @@
 title: "Team"
 description: "Active members of the club, feel free to reach out!"
 members:
-  - name: "Raghavendra N.D"
+  - name: "Raghavendra"
     role: "Enthusiast"
     batch: "MS25"
     image: "/team/IMG-20260526-WA0013.jpg"
-    email: "salianraghavendra357@gmail.com"
-    linkedin:"example"
-  
+    email: "member@example.com"
+    instagram: "nil"
+    linkedin: "https://linkedin.com/in/example"
+
   - name: "Ujjvall Sharma"
     role: "Convener"
     batch: "MS24"
