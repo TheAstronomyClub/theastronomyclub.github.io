@@ -5,9 +5,8 @@ members:
   - name: "Raghavendra N.D"
     role: "Enthusiast"
     batch: "MS25"
-    image: "static/team/IMG-20260526-WA0013.jpg"
+    image: "/team/IMG-20260526-WA0013.jpg"
     email: "salianraghavendra357@gmail.com"
-    linkedin: "https://www.linkedin.com/in/raghavendra-salian-83b670254"
   
   - name: "Ujjvall Sharma"
     role: "Convener"
