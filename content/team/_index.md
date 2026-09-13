@@ -2,7 +2,7 @@
 title: "Team"
 description: "Active members of the club, feel free to reach out!"
 members:
-  - name: "Raghavendra N.D"
+   - name: "Raghavendra N.D"
     role: "Enthusiast"
     batch: "MS25"
     image: "/team/IMG-20260526-WA0013.jpg"
