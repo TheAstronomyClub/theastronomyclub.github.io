@@ -1,7 +1,7 @@
 # Example site configuration for the Blank Magazine theme.
 # Run it from the repository root with:
 #   hugo server --source exampleSite --themesDir ../..
-baseURL = "https://example.com/"
+baseURL = "https://theastronomyclub.github.io/"
 languageCode = "en"
 defaultContentLanguage = "en"
 title = "Astronomy Club of IISERM"
