@@ -24,6 +24,12 @@ members:
     email: "sparsharay@gmail.com"
     github: "https://github.com/SparshaRay"
 
+  - name: "Shreyas Bhokare"
+    role: "Telescope Committee"
+    batch: "MS21"
+    image: "/team/shreyas.jpeg"
+    email: "sparsharay@gmail.com"
+
   - name: "Veera Vaishnavi Godithi"
     role: "Ex Co-convener (2022-23)"
     batch: "MS21"

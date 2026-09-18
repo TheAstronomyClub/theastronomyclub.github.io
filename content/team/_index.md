@@ -34,6 +34,14 @@ members:
     instagram: "https://www.instagram.com/ritviks_r50?stkn=d2szMDBtN2Vsa2Vv"
     linkedin: "https://www.linkedin.com/in/ritvikedoliya?utm_source=share_via&utm_content=profile&utm_medium=member_android"
 
+  - name: "Diljit Singh"
+    role: "Ex Co-convener (2024-25)"
+    batch: "MS23"
+    image: "/team/diljit.jpg"
+    email: "member@example.com"
+    instagram: "https://instagram.com/example"
+    linkedin: "https://linkedin.com/in/example"
+
   - name: "Devansh"
     role: "Astrophotographer"
     batch: "MS23"
