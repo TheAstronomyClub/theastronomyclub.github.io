@@ -53,7 +53,7 @@ members:
     linkedin: "https://www.linkedin.com/in/niranjan-ashok-214697218/"
   
   - name: "Sanatan Jaminy"
-    role: "Ex Co-convener (2021-22)"
+    role: "Club Legend. Ex Co-convener (2021-22)"
     batch: "MS19"
     image: "/team/sanatan.jpeg"
     email: "member@example.com"
