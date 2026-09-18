@@ -66,7 +66,7 @@ members:
     linkedin: "https://www.linkedin.com/in/prajakta-mane1618/"
 
   - name: "Devang Liya"
-    role: "Ex Convener (2018-21)"
+    role: "Ex Co-convener (2018-21)"
     batch: "MS17"
     image: "/team/devang.webp"
     email: "devangliya.ncl@gmail.com"
