@@ -51,7 +51,7 @@ body {
   color: var(--color-text);
   background:
     linear-gradient(rgba(4, 20, 27, 0.34), rgba(4, 20, 27, 0.5)),
-    url("/pexels-foadshariyati-27977085.jpg") center / cover fixed;
+    url("/pexels-foadshariyati-27977085.resized.jpg") center / cover fixed;
   line-height: 1.8;
   font-weight: 400;
   overflow-x: hidden;
