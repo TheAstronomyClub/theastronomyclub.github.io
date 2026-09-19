@@ -30,6 +30,12 @@ members:
     image: "/team/shreyas.jpeg"
     email: "sparsharay@gmail.com"
 
+  - name: "Aratrik Basu"
+    role: "Quizmaster"
+    batch: "MS21"
+    image: "/team/aratrik.jpeg"
+    email: "aratrik4.rhythm@gmail.com"
+
   - name: "Veera Vaishnavi Godithi"
     role: "Ex Co-convener (2022-23)"
     batch: "MS21"
