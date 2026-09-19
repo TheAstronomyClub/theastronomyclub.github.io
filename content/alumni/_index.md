@@ -65,7 +65,7 @@ members:
     linkedin: "https://www.linkedin.com/in/niranjan-ashok-214697218/"
   
   - name: "Sanatan Jaminy"
-    role: "Ex Co-convener (2021-22)"
+    role: "Club Legend. Ex Co-convener (2021-22)"
     batch: "MS19"
     image: "/team/sanatan.jpeg"
     email: "member@example.com"
@@ -78,7 +78,7 @@ members:
     linkedin: "https://www.linkedin.com/in/prajakta-mane1618/"
 
   - name: "Devang Liya"
-    role: "Ex Convener (2018-21)"
+    role: "Ex Co-convener (2018-21)"
     batch: "MS17"
     image: "/team/devang.webp"
     email: "devangliya.ncl@gmail.com"
