@@ -1,292 +1,104 @@
 {{ define "main" }}
+<article class="about-page">
 
-{{/* =========================
-HERO SECTION DISABLED
-========================= */}}
-
-{{/*
-
-<section class="home-hero">
-
-  <div class="container">
-
-```
-<div class="home-hero-inner">
-
-  <p class="home-hero-eyebrow">
-    {{ .Site.Params.author | upper }}
-  </p>
-
-  <h1 class="home-hero-title">
-    {{ .Site.Params.slogan | default .Site.Title }}
-  </h1>
-
-  <p class="home-hero-desc">
-    {{ .Site.Params.description }}
-  </p>
-
-  <div class="home-hero-meta">
-
-    <span>
-      {{ len (where .Site.RegularPages "Section" "posts") }} posts
-    </span>
-
-    <span class="dot">·</span>
-
-    <span>
-      {{ len .Site.Taxonomies.tags }} tags
-    </span>
-
-    <span class="dot">·</span>
-
-    <span>
-      {{ len (where .Site.RegularPages "Section" "gallery") }} galleries
-    </span>
-
-  </div>
-
-</div>
-```
-
-  </div>
-
-</section>
-*/}}
-
-{{/* =========================
-FEATURED POST DISABLED
-========================= */}}
-
-{{/*
-{{ $featured := where (where .Site.RegularPages "Section" "posts") "Params.featured" true }}
-
-{{ if $featured }}
-
-{{ with index $featured 0 }}
-
-<section class="home-featured">
-
-  <div class="container">
-
-```
-<div class="section-label">
-
-  <span class="label-line"></span>
-
-  <span class="label-text">FEATURED</span>
-
-  <span class="label-line"></span>
-
-</div>
-
-<a href="{{ .Permalink }}" class="featured-card feature-cover">
-
-  {{ if .Params.cover }}
-
-  <div class="featured-cover">
-
-    <img src="{{ .Params.cover }}" alt="{{ .Title }}">
-
-  </div>
-
-  {{ end }}
-
-  <div class="featured-info">
-
-    <div class="featured-meta">
-
-      <time>{{ .Date.Format "January 2, 2006" }}</time>
-
-      {{ with .Params.categories }}
-
-      <span class="dot">·</span>
-
-      {{ range first 1 . }}
-
-      <span>{{ . }}</span>
-
-      {{ end }}
-
-      {{ end }}
-
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero-inner">
+        <div class="about-hero-avatar">
+          {{ with .Site.Params.authorAvatar }}
+          <img src="{{ . }}" alt="{{ $.Site.Params.author }}">
+          {{ else }}
+          <span class="about-avatar-fallback" aria-hidden="true">{{ substr ($.Site.Params.author | default "A") 0 1 }}</span>
+          {{ end }}
+        </div>
+        <div class="about-hero-text">
+          <p class="page-eyebrow"></p>
+          <h1 class="about-title">{{ .Site.Params.author }}</h1>
+          <p class="about-subtitle">{{ .Site.Params.authorBio }}</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <h2 class="featured-title">{{ .Title }}</h2>
-
-    {{ with .Description }}
-
-    <p class="featured-excerpt">
-      {{ . | plainify | truncate 160 }}
-    </p>
-
-    {{ end }}
-
-    <span class="featured-read">
-      Read More →
-    </span>
-
-  </div>
-
-</a>
-```
-
-  </div>
-
-</section>
-
-{{ end }}
-
-{{ end }}
-*/}}
-
-{{/* =========================
-LATEST POSTS DISABLED
-========================= */}}
-
-{{/*
-
-<section class="home-latest">
-
-  <div class="container">
-
-```
-<div class="section-label">
-
-  <span class="label-line"></span>
-
-  <span class="label-text">LATEST</span>
-
-  <span class="label-line"></span>
-
-</div>
-
-<div class="post-list">
-
-  {{ $posts := where .Site.RegularPages "Section" "posts" }}
-
-  {{ $posts = $posts | first 6 }}
-
-  {{ range $posts }}
-
-  <a href="{{ .Permalink }}" class="post-list-item">
-
-    {{ if .Params.cover }}
-
-    <div class="post-list-cover">
-
-      <img src="{{ .Params.cover }}"
-           alt="{{ .Title }}"
-           loading="lazy">
-
+  <!-- Quote -->
+  <section class="about-quote">
+    <div class="container-narrow">
+      <blockquote class="about-quote-text">
+        "Everything from cosmology to telescopes, from sci-fi to pizzas!..."
+      </blockquote>
     </div>
+  </section>
 
-    {{ end }}
+  <!-- Content -->
+  <section class="about-content">
+    {{ .Content }}
+  </section>
 
-    <div class="post-list-content">
-
-      <h3 class="post-list-title">
-        {{ .Title }}
-      </h3>
-
+  <!-- Skills -->
+  <!-- <section class="about-skills">
+    <div class="container">
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">WHAT I DO · Interests and Skills</span>
+        <span class="label-line"></span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-num">01</div>
+          <h3>Writing</h3>
+          <p>Recording reflections, reading notes, and travel observations through words.</p>
+        </div>
+        <div class="skill-item">
+          <div class="skill-num">02</div>
+          <h3>Photography</h3>
+          <p>Capturing overlooked moments in daily life through street and nature photography.</p>
+        </div>
+        <div class="skill-item">
+          <div class="skill-num">03</div>
+          <h3>Reading</h3>
+          <p>Reading across literature, history, philosophy, and technology as a form of self-investment.</p>
+        </div>
+        <div class="skill-item">
+          <div class="skill-num">04</div>
+          <h3>Travel</h3>
+          <p>Exploring different cities, cultures, and landscapes while discovering a wider world.</p>
+        </div>
+      </div>
     </div>
+  </section> -->
 
-  </a>
-
-  {{ end }}
-
-</div>
-```
-
-  </div>
-
-</section>
-*/}}
-
-{{/* =========================
-GALLERY DISABLED
-========================= */}}
-
-{{/*
-{{ $gallery := where .Site.RegularPages "Section" "gallery" }}
-
-{{ if $gallery }}
-
-<section class="home-gallery">
-
-  <div class="container">
-
-```
-<div class="home-gallery-grid">
-
-  {{ range first 4 $gallery }}
-
-  <a href="{{ .Permalink }}"
-     class="home-gallery-item">
-
-    {{ with .Params.cover }}
-
-    <img src="{{ . }}"
-         alt="{{ $.Title }}"
-         loading="lazy">
-
-    {{ end }}
-
-  </a>
-
-  {{ end }}
-
-</div>
-```
-
-  </div>
-
-</section>
-
-{{ end }}
-*/}}
-
-<!-- About -->
-
-<section class="home-about">
-
-  <div class="container">
-
-```
-<div class="home-about-inner">
-
-  <div class="home-about-text">
-
-    <p class="section-label-text">
-      ABOUT
-    </p>
-
-    <h2 class="home-about-title">
-      {{ .Site.Params.author }}
-    </h2>
-
-    <p class="home-about-desc">
-      {{ .Site.Params.authorBio }}.
-      Here we record life, ideas, and creative work through words and images.
-    </p>
-
-    <div class="home-about-links">
-
-      <a href="{{ "/about/" | relURL }}"
-         class="more-link">
-
-        Learn More →
-
-      </a>
-
+  <!-- Timeline -->
+ 
+  <!-- Contact -->
+  <section class="about-contact">
+    <div class="container-narrow">
+      <div class="contact-inner">
+        <p class="section-label-text">Contact us</p>
+        <h2 class="contact-title">Get in touch</h2>
+        <p class="contact-desc">We are welcome to any inquiries or collaborations</p>
+        <div class="contact-links">
+          {{ with .Site.Params.email }}
+          <a href="mailto:{{ . }}" class="contact-link">
+            <span class="contact-label">EMAIL</span>
+            <span class="contact-value">{{ . }}</span>
+          </a>
+          {{ end }}
+          {{ with .Site.Params.instagram }}
+          <a href="{{ . }}" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-label">INSTAGRAM</span>
+            <span class="contact-value">@astroclub.iiserm</span>
+          </a>
+          {{ end }}
+          {{ with .Site.Params.twitter }}
+          <a href="{{ . }}" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-label">TWITTER</span>
+            <span class="contact-value">@AstroclubIISERM</span>
+          </a>
+          {{ end }}
+        </div>
+      </div>
     </div>
-
-  </div>
-
-</div>
-```
-
-  </div>
-
-</section>
-
+  </section>
+</article>
 {{ end }}

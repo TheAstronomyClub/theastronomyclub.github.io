@@ -14,7 +14,8 @@ enableRobotsTXT = true
 [params]
   description = ""
   author = "The Astronomy Club of IISER Mohali"
-  authorBio = ""
+  authorBio = "Welcome to the website of the Astronomy Club at IISER Mohali. We're a group of students interested in Astronomy & involved in promoting activities related to amateur Astronomy and Astrophysics"
+  authorAvatar = "/logo.png"
   slogan = ""
   email = "astronomyclub@iisermohali.ac.in"
   instagram = "https://www.instagram.com/astroclub.iiserm"
@@ -23,10 +24,7 @@ enableRobotsTXT = true
   mainSections = ["posts"]
 
 [menu]
-  [[menu.main]]
-    name = "About Us"
-    url = "/about/"
-    weight = 1
+
   [[menu.main]]
     name = "Gallery"
     url = "/gallery/"
