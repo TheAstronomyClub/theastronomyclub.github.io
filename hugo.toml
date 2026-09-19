@@ -17,9 +17,9 @@ enableRobotsTXT = true
   authorBio = ""
   slogan = ""
   email = "astronomyclub@iisermohali.ac.in"
-  instagram = "https://instagram.com/"
-  twitter = "https://twitter.com/"
-  facebook = "https://facebook.com/"
+  instagram = "https://www.instagram.com/astroclub.iiserm"
+  twitter = "https://x.com/AstroclubIISERM"
+  youtube = "https://www.youtube.com/channel/UCj6eEl3_rXHt4_7wKzk-b-g"
   mainSections = ["posts"]
 
 [menu]
