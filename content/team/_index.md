@@ -38,9 +38,8 @@ members:
     role: "Ex Co-convener (2024-25)"
     batch: "MS23"
     image: "/team/diljit.jpg"
-    email: "member@example.com"
-    instagram: "https://instagram.com/example"
-    linkedin: "https://linkedin.com/in/example"
+    email: "diljit0507singh@gmail.com"
+    linkedin: "https://www.linkedin.com/in/diljit-singh-14aba6294/"
 
   - name: "Devansh"
     role: "Astrophotographer"
