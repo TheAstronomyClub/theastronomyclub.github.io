@@ -11,7 +11,7 @@ categories_list:
       - name: "Skywatcher GoTo Dobsonian 10-inch"
         image: "/images/equipment/Skywatcher GoTo Dobsonian 10-inch.jpg"
         note: "10-inch aperture, GoTo"
-      - name: "Celestron StarSense 8-inch Dobsonian"
+      - name: "3*Celestron StarSense 8-inch Dobsonian"
         image: "/images/equipment/Celestron StarSense 8-inch Dobsonian.webp"
         note: "8-inch aperture"
       - name: "Meade Polaris 5-inch EQ"
