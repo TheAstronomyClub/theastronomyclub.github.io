@@ -24,6 +24,7 @@ enableRobotsTXT = true
   mainSections = ["posts"]
 
 [menu]
+  
 
   [[menu.main]]
     name = "Gallery"
@@ -41,6 +42,10 @@ enableRobotsTXT = true
     name = "Resources"
     url = "/resources/"
     weight = 5
+     [[menu.main]]
+    name = "Equipment"
+    url = "/equipment/"
+    weight = 6
 
 [taxonomies]
   tag = "tags"
