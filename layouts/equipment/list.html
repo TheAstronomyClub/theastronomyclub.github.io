@@ -1,0 +1,86 @@
+{{ define "main" }}
+<section class="page-header">
+  <div class="container">
+    <p class="page-eyebrow">EQUIPMENT</p>
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="page-divider"></div>
+  </div>
+</section>
+
+<section class="eq-section">
+  <div class="eq-wrap">
+    <div class="eq-intro">{{ .Content }}</div>
+
+    {{ range .Params.categories_list }}
+    <h2 class="eq-heading">{{ .title }}</h2>
+    <div class="eq-grid">
+      {{ range .items }}
+      <article class="eq-card{{ if not .image }} eq-card--text{{ end }}">
+        {{ if .image }}
+        <div class="eq-img">
+          <img src="{{ .image | relURL }}" alt="{{ .name }}" loading="lazy">
+        </div>
+        {{ end }}
+        <div class="eq-body">
+          <h3 class="eq-name">
+            {{ if .link }}<a href="{{ .link }}" target="_blank" rel="noopener">{{ .name }} ↗</a>{{ else }}{{ .name }}{{ end }}
+          </h3>
+          {{ with .note }}<p class="eq-note">{{ . }}</p>{{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<style>
+  .eq-section { padding: 2rem 1.5rem 5rem; }
+  .eq-wrap { max-width: 1100px; margin: 0 auto; }
+  .eq-intro { text-align: center; color: #aab8c4; font-size: 1.05rem; margin-bottom: 1rem; }
+  .eq-heading {
+    margin: 3rem 0 1.25rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #f0b660;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .eq-heading::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.15); }
+  .eq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+  .eq-card {
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .eq-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(240,182,96,0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  .eq-img {
+    background: #fff;
+    aspect-ratio: 1 / 1;
+    padding: 0.75rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .eq-img img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    margin: 0; border-radius: 0;
+  }
+  .eq-body { padding: 1rem 1.1rem 1.2rem; }
+  .eq-name { margin: 0; font-size: 1.02rem; line-height: 1.35; color: #fff; }
+  .eq-name a { color: #f0b660; text-decoration: none; }
+  .eq-name a:hover { text-decoration: underline; }
+  .eq-note { margin: 0.4rem 0 0; font-size: 0.88rem; color: #aab8c4; }
+  .eq-card--text .eq-body { padding: 1.25rem; }
+</style>
+{{ end }}
