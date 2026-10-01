@@ -38,7 +38,8 @@ members:
     role: "Ex Co-convener (2024-25)"
     batch: "MS23"
     image: "/team/diljit.jpg"
-    email: "diljit0507singh@gmail.com"
+    email: "ms23136@iisermohali.ac.in"
+    instagram: "https://www.instagram.com/diljitsingh0507?stkn=ZTJhZWhsaG92eXhi"
     linkedin: "https://www.linkedin.com/in/diljit-singh-14aba6294/"
 
   - name: "Devansh"
@@ -46,8 +47,7 @@ members:
     batch: "MS23"
     image: "/team/devansh.jpg"
     email: "member@example.com"
-    instagram: "https://instagram.com/example"
-    linkedin: "https://linkedin.com/in/example"
+    linkedin: "https://www.linkedin.com/in/devansh-bangar/"
 
   - name: "Soumadip Bhowmick"
     role: "Ex Convener (2023-24)"
