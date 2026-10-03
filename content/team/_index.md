@@ -5,7 +5,7 @@ members:
   - name: "Ujjvall Sharma"
     role: "Convener"
     batch: "MS24"
-    image: "/team/ujjvall.jpg"
+    image: "/team/ujjvall.jpeg"
     email: "member@example.com"
     instagram: "https://instagram.com/example"
     linkedin: "https://linkedin.com/in/example"
