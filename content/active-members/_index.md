@@ -23,6 +23,7 @@ description: "Our current active members."
 - Raghvendra
 - Riyan Alvi
 - Rohan Khade 
+- Shashvita
 - Sriyans Reddy
 - Titthyyam Nahata 
 - Ujjvall Sharma 
