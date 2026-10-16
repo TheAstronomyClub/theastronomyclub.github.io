@@ -13,10 +13,10 @@
     <div class="team-grid">
       {{ range .Params.members }}
       <article class="team-card">
-        <img class="team-photo" src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+        {{ with .image }}<img class="team-photo" src="{{ . }}" alt="{{ $.Title }} member photo" loading="lazy">{{ end }}
         <h2 class="team-name">{{ .name }}</h2>
-        <p class="team-role">{{ .role }}</p>
-        <p class="team-batch">{{ .batch }}</p>
+        {{ with .role }}<p class="team-role">{{ . }}</p>{{ end }}
+        {{ with .batch }}<p class="team-batch">{{ . }}</p>{{ end }}
 
         <div class="team-links">
           {{ with .email }}<a href="mailto:{{ . }}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>{{ end }}
