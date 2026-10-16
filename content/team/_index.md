@@ -1,10 +1,30 @@
 ---
 title: "Team"
 description: "Active members of the club, feel free to reach out!"
+
+# The groups shown in the dropdown, in this order. Edit names or colours here.
+groups:
+  - name: "Active members"
+    color: "#8fe3b0"
+  - name: "N1Galpha"
+    color: "#b58cff"
+  - name: "Horn"
+    color: "#59e0ff"
+  - name: "Conveners"
+    color: "#ffcf5a"
+  - name: "Website Development"
+    color: "#ff8fb1"
+
+# For each person, "groups" lists every group they belong to (one or many).
+# The names must match the group names above exactly.
+# "role" is the title printed on the card.
+# People with "groups: []" only appear under Everyone.
+
 members:
   - name: "Ujjvall Sharma"
     role: "Convener"
     batch: "MS24"
+    groups: ["Active members", "Conveners", "Horn"]
     image: "/team/ujjvall.jpeg"
     email: "member@example.com"
     instagram: "https://instagram.com/example"
@@ -13,6 +33,7 @@ members:
   - name: "Rohan Khade"
     role: "Co-convener"
     batch: "MS24"
+    groups: ["Active members", "Conveners"]
     image: "/team/rohan.jpg"
     email: "member@example.com"
     instagram: "https://instagram.com/example"
@@ -21,6 +42,7 @@ members:
   - name: "Abhinav Pillai"
     role: "Ex Co-convener (2025-26)"
     batch: "MS24"
+    groups: ["Active members", "Conveners"]
     image: "/team/abhinav.jpg"
     email: "member@example.com"
     instagram: "https://instagram.com/example"
@@ -29,6 +51,7 @@ members:
   - name: "Ritvik Edoliya"
     role: "Ex Convener (2024-25)"
     batch: "MS23"
+    groups: ["Conveners"]
     image: "/team/ritvik.JPG"
     email: "ms23179@iisermohali.ac.in"
     instagram: "https://www.instagram.com/ritviks_r50?stkn=d2szMDBtN2Vsa2Vv"
@@ -37,6 +60,7 @@ members:
   - name: "Diljit Singh"
     role: "Ex Co-convener (2024-25)"
     batch: "MS23"
+    groups: ["Active members", "Conveners"]
     image: "/team/diljit.jpg"
     email: "ms23136@iisermohali.ac.in"
     instagram: "https://www.instagram.com/diljitsingh0507?stkn=ZTJhZWhsaG92eXhi"
@@ -45,6 +69,7 @@ members:
   - name: "Devansh"
     role: "Astrophotographer"
     batch: "MS23"
+    groups: ["Active members"]
     image: "/team/devansh.jpg"
     email: "member@example.com"
     linkedin: "https://www.linkedin.com/in/devansh-bangar/"
@@ -52,6 +77,7 @@ members:
   - name: "Soumadip Bhowmick"
     role: "Ex Convener (2023-24)"
     batch: "MS22"
+    groups: ["Conveners"]
     image: "/team/soumadip.jpg"
     email: "ms22074@iisermohali.ac.in"
     website: "https://soumadipbhowmick.github.io/"
@@ -60,6 +86,7 @@ members:
   - name: "Sanchit Das"
     role: "Telescope Committee"
     batch: "MS22"
+    groups: []
     image: "/team/sanchit.jpg"
     email: "sanchit2692004@gmail.com"
     linkedin: "https://www.linkedin.com/in/sanchit-das-aa989327a/"
@@ -67,6 +94,7 @@ members:
   - name: "Harshit Krishna"
     role: "Telescope Committee"
     batch: "MS22"
+    groups: []
     image: "/team/harshit.jpg"
     email: "ms22115@iisermohali.ac.in"
     instagram: "https://www.instagram.com/_.the_celestial_cartographer?utm_source=qr&stkn=MWlwMGNlcWVzdzZkMw=="
@@ -75,6 +103,7 @@ members:
   - name: "Amarnath"
     role: "Outreach Coordinator"
     batch: "MS22"
+    groups: []
     image: "/team/amarnath.jpg"
     email: "member@example.com"
     instagram: "https://instagram.com/example"
@@ -83,170 +112,110 @@ members:
   - name: "Avni"
     role: "Ex Co-convener (2023-24)"
     batch: "MS22"
+    groups: ["Conveners"]
     image: "/team/avni.jpg"
     email: "member@example.com"
     instagram: "https://instagram.com/example"
     linkedin: "https://linkedin.com/in/example"
 
- 
-
   - name: "Amrit Raj"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/amrit.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members", "Horn"]
 
   - name: "Eklavya Rai"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/eklavya.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members", "Website Development"]
 
   - name: "Gaureesh Sharma"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/gaureesh.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Hiyanshi Nema"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/hiyanshi.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Navya Gupta"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/navya.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Nikhil Nagpal"
     role: "Active Member"
     batch: "MS24"
-    image: "/team/nikhil.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members", "Horn"]
 
   - name: "Panshul Gupta"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/panshul.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Peehu"
     role: "Active Member"
     batch: "MS24"
-    image: "/team/peehu.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Prikshit"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/prikshit.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Prashasti"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/prashasti.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Rachit"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/rachit.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Rahul Kumar"
     role: "Active Member"
-    batch: "MS24"
-    image: "/team/rahul.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    batch: "MS25"
+    groups: ["Active members"]
 
   - name: "Raghvendra"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/raghvendra.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members", "Horn"]
 
   - name: "Riyan Alvi"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/riyan.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Shashvita"
     role: "Active Member"
-    batch: "MS24"
-    image: "/team/shashvita.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    batch: "MS25"
+    groups: ["Active members"]
 
   - name: "Sriyans Reddy"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/sriyans.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Titthyyam Nahata"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/titthyyam.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
 
   - name: "Vaibhav"
     role: "Active Member"
-    batch: "MS24"
-    image: "/team/vaibhav.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    batch: "MS25"
+    groups: ["Active members"]
 
   - name: "Vishesh"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/vishesh.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members", "N1Galpha", "Horn"]
 
   - name: "Yash Sharma"
     role: "Active Member"
     batch: "MS25"
-    image: "/team/yash.jpg"
-    # email: ""
-    # instagram: ""
-    # linkedin: ""
+    groups: ["Active members"]
+
 ---
