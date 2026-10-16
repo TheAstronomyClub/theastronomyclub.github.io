@@ -46,6 +46,10 @@ enableRobotsTXT = true
     name = "Equipment"
     url = "/equipment/"
     weight = 6
+  [[menu.main]]
+    name = "Active Members"
+    url = "/active-members/"
+    weight = 6
 
 [taxonomies]
   tag = "tags"
