@@ -2,11 +2,9 @@
 title: "Team"
 description: "Active members of the club, feel free to reach out!"
 
-# Options shown in the role dropdown, in this order.
-roles: ["Active members", "N1Gα", "Horn", "Conveners", "Website Development"]
 
-# Each person's "groups" must use the names above, spelled exactly the same.
-# A person can be in several groups. Use groups: [] for none.
+roles: ["Active members", "N1Gα", "Horn", "Conveners", "Website Development", "Astrophotography"]
+
 
 members:
   - name: "Ujjvall Sharma"
@@ -122,7 +120,7 @@ members:
   - name: "Amrit Raj"
     role: "Active Member"
     batch: "MS25"
-    groups: ["Active members", "Horn"]
+    groups: ["Active members", "Horn",]
 
   - name: "Eklavya Rai"
     role: "Active Member"
