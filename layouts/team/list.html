@@ -1,55 +1,34 @@
 {{ define "main" }}
 <section class="page-header">
   <div class="container">
+    <p class="page-eyebrow"></p>
     <h1 class="page-title">{{ .Title }}</h1>
     {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
     <div class="page-divider"></div>
   </div>
 </section>
 
-<section class="cz-wrap">
+<section class="team-section">
   <div class="container">
 
-    <!-- Controls -->
-    <div class="cz-controls">
-      <div class="cz-dd" id="czDd">
-        <button type="button" class="cz-dd-btn" id="czBtn" aria-haspopup="listbox" aria-expanded="false">
-          <span class="cz-dd-dot" id="czDot"></span>
-          <span class="cz-dd-label" id="czLabel">Everyone</span>
-          <span class="cz-dd-count" id="czCount"></span>
-          <svg class="cz-dd-caret" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="cz-dd-menu" id="czMenu" role="listbox" aria-label="Filter by role" hidden></ul>
-      </div>
-
-      <label class="cz-search">
-        <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="search" id="czSearch" placeholder="Find a member" autocomplete="off" aria-label="Search members by name">
-      </label>
+    <div class="team-filters">
+      <input type="search" id="teamSearch" placeholder="Search by name" autocomplete="off" aria-label="Search members by name">
+      <select id="teamRole" aria-label="Filter by role">
+        <option value="">All roles</option>
+        {{ range .Params.roles }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+      </select>
     </div>
+    <p class="team-count" id="teamCount" aria-live="polite"></p>
 
-    <p class="cz-status" id="czStatus" aria-live="polite"></p>
-
-    <!-- Cards -->
-    <div class="cz-grid" id="czGrid">
+    <div class="team-grid">
       {{ range .Params.members }}
-      {{ $m := . }}
-      <article class="cz-card" data-roles="{{ with .groups }}{{ delimit . "|" }}{{ end }}" data-name="{{ lower .name }}">
-        <div class="cz-chips">{{ range .groups }}<span class="cz-chip" data-g="{{ . }}">{{ . }}</span>{{ end }}</div>
+      <article class="team-card" data-name="{{ lower .name }}" data-groups="{{ with .groups }}{{ delimit . "|" }}{{ end }}">
+        <img class="team-photo" src="{{ .image | default "/team/placeholder.jpg" }}" alt="{{ .name }}" loading="lazy">
+        <h2 class="team-name">{{ .name }}</h2>
+        {{ with .role }}<p class="team-role">{{ . }}</p>{{ end }}
+        {{ with .batch }}<p class="team-batch">{{ . }}</p>{{ end }}
 
-        <div class="cz-avatar">
-          <span class="cz-ring"></span>
-          <div class="cz-photo">
-            <span class="cz-initial">{{ substr .name 0 1 }}</span>
-            {{ with .image }}<img src="{{ . }}" alt="{{ $m.name }}" loading="lazy" onerror="this.remove()">{{ end }}
-          </div>
-        </div>
-
-        <h2 class="cz-name">{{ .name }}</h2>
-        {{ with .role }}<p class="cz-role">{{ . }}</p>{{ end }}
-        {{ with .batch }}<p class="cz-batch">{{ . }}</p>{{ end }}
-
-        <div class="cz-links">
+        <div class="team-links">
           {{ with .email }}<a href="mailto:{{ . }}" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>{{ end }}
           {{ with .instagram }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>{{ end }}
           {{ with .linkedin }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>{{ end }}
@@ -59,190 +38,44 @@
       {{ end }}
     </div>
 
-    <div class="cz-empty" id="czEmpty" hidden>
-      <p>Nobody matches that yet.</p>
-      <button type="button" id="czReset">Show everyone</button>
-    </div>
+    <p class="team-empty" id="teamEmpty" hidden>No one matches that. Try another name or role.</p>
   </div>
 </section>
 
-<div id="czGroups" hidden data-groups="{{ .Params.groups | default slice | jsonify }}"></div>
-
 <style>
-.cz-wrap{
-  --c:#7fd8ff; --ink:#eaf6ff; --mute:#9db4c6; --panel:#07141d; --edge:#17303f;
-  padding:1rem 0 5rem; color:var(--ink);
+.team-filters{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin:0 auto 1rem;max-width:640px}
+.team-filters input,.team-filters select{
+  flex:1 1 220px;padding:.8rem 1rem;font:inherit;color:inherit;
+  background:rgba(7,20,29,.85);border:1px solid rgba(255,255,255,.18);border-radius:10px;
 }
-/* ---------- controls ---------- */
-.cz-controls{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:center;margin:0 auto 1.25rem;max-width:880px}
-.cz-dd{position:relative;flex:1 1 280px;max-width:340px}
-.cz-dd-btn{
-  width:100%;display:flex;align-items:center;gap:.7rem;padding:.85rem 1rem;cursor:pointer;
-  background:linear-gradient(180deg,#0b1d29,#07141d);color:var(--ink);font:inherit;font-size:1rem;
-  border:1px solid var(--edge);border-radius:14px;text-align:left;
-  box-shadow:0 0 0 0 transparent, inset 0 1px 0 #ffffff10;transition:border-color .2s, box-shadow .25s;
-}
-.cz-dd-btn:hover,.cz-dd-btn:focus-visible,.cz-dd[data-open="true"] .cz-dd-btn{
-  border-color:var(--c);box-shadow:0 0 28px -6px var(--c), inset 0 1px 0 #ffffff14;outline:none;
-}
-.cz-dd-dot{width:12px;height:12px;border-radius:50%;background:var(--c);box-shadow:0 0 12px 2px var(--c);flex:none}
-.cz-dd-label{flex:1;font-weight:600}
-.cz-dd-count{font-size:.8rem;color:var(--mute);background:#ffffff0d;padding:.1rem .55rem;border-radius:99px}
-.cz-dd-caret{transition:transform .25s;color:var(--mute)}
-.cz-dd[data-open="true"] .cz-dd-caret{transform:rotate(180deg)}
-.cz-dd-menu{
-  position:absolute;z-index:30;left:0;right:0;top:calc(100% + 8px);margin:0;padding:.4rem;list-style:none;
-  background:#06111aee;backdrop-filter:blur(14px);border:1px solid var(--edge);border-radius:16px;
-  box-shadow:0 24px 60px -12px #000c;transform-origin:top;animation:czDrop .22s ease-out;
-}
-.cz-dd-menu[hidden]{display:none}
-.cz-opt{display:flex;align-items:center;gap:.7rem;padding:.6rem .7rem;border-radius:10px;cursor:pointer;color:var(--ink)}
-.cz-opt:hover,.cz-opt:focus-visible,.cz-opt[aria-selected="true"]{background:#ffffff10;outline:none}
-.cz-opt .cz-dd-dot{width:10px;height:10px;box-shadow:0 0 8px 1px var(--c)}
-.cz-opt span.n{margin-left:auto;font-size:.8rem;color:var(--mute)}
-@keyframes czDrop{from{opacity:0;transform:scaleY(.92) translateY(-6px)}to{opacity:1;transform:none}}
-
-.cz-search{flex:1 1 220px;max-width:260px;display:flex;align-items:center;gap:.5rem;padding:.85rem 1rem;color:var(--mute);
-  background:#07141d;border:1px solid var(--edge);border-radius:14px;transition:border-color .2s}
-.cz-search:focus-within{border-color:var(--c);color:var(--ink)}
-.cz-search input{all:unset;flex:1;color:var(--ink);font-size:1rem;min-width:0}
-.cz-search input::placeholder{color:var(--mute)}
-
-.cz-empty button:focus-visible{outline:2px solid #fff;outline-offset:3px}
-.cz-status{text-align:center;color:var(--mute);margin:0 0 2rem;min-height:1.4em}
-
-/* ---------- grid ---------- */
-.cz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.4rem}
-.cz-card{
-  --c:#7fd8ff; --mx:50%; --my:0%;
-  position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;
-  padding:3.4rem 1.2rem 1.5rem;border-radius:22px;isolation:isolate;overflow:hidden;
-  background:
-    radial-gradient(240px circle at var(--mx) var(--my), color-mix(in srgb,var(--c) 22%,transparent), transparent 70%),
-    linear-gradient(180deg,#0a1b27,#06121b);
-  border:1px solid var(--edge);transition:border-color .25s, transform .25s, box-shadow .3s;
-}
-.cz-card[hidden]{display:none}
-.cz-card:hover{border-color:var(--c);transform:translateY(-6px);box-shadow:0 20px 50px -20px var(--c)}
-.cz-card::after{ /* faint constellation lines */
-  content:"";position:absolute;inset:0;z-index:-1;opacity:.35;pointer-events:none;
-  background:
-    linear-gradient(118deg,transparent 48%,color-mix(in srgb,var(--c) 40%,transparent) 49%,transparent 50%);
-}
-.cz-pop{animation:czPop .45s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:var(--d,0ms)}
-@keyframes czPop{from{opacity:0;transform:scale(.86) translateY(14px)}to{opacity:1;transform:none}}
-
-.cz-chips{position:absolute;top:.75rem;left:.6rem;right:.6rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem}
-.cz-chip{font-size:.72rem;font-weight:600;color:var(--k,var(--c));padding:.15rem .6rem;border-radius:99px;
-  border:1px solid color-mix(in srgb,var(--k,var(--c)) 55%,transparent);background:color-mix(in srgb,var(--k,var(--c)) 10%,transparent)}
-
-/* avatar: spinning ring + orbiting star */
-.cz-avatar{position:relative;width:128px;height:128px;margin-bottom:1rem}
-.cz-ring{position:absolute;inset:-5px;border-radius:50%;
-  background:conic-gradient(from 0deg,var(--c),transparent 35%,var(--c) 60%,transparent 85%,var(--c));
-  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));
-          mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));
-  animation:czSpin 9s linear infinite}
-.cz-card:hover .cz-ring{animation-duration:2.5s}
-@keyframes czSpin{to{transform:rotate(360deg)}}
-.cz-photo{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;
-  background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--c) 55%,#fff),var(--c) 40%,#04121a 130%)}
-.cz-initial{position:absolute;inset:0;display:grid;place-items:center;font-size:3.2rem;font-weight:700;color:#04121acc}
-.cz-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.cz-card:hover .cz-photo img{transform:scale(1.08)}
-
-.cz-name{margin:0;font-size:1.25rem;line-height:1.2}
-.cz-role{margin:.35rem 0 0;color:var(--ink);opacity:.9;font-size:.98rem}
-.cz-batch{margin:.35rem 0 0;color:var(--mute);font-size:.88rem}
-.cz-links{display:flex;gap:.55rem;margin-top:auto;padding-top:1.1rem}
-.cz-links a{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;color:var(--ink);
-  background:#ffffff0d;border:1px solid transparent;transition:all .2s}
-.cz-links a:hover,.cz-links a:focus-visible{color:#04121a;background:var(--c);transform:translateY(-3px) rotate(-8deg);box-shadow:0 8px 18px -6px var(--c);outline:none}
-
-.cz-empty{text-align:center;padding:3rem 0;color:var(--mute)}
-.cz-empty button{margin-top:.5rem;cursor:pointer;font:inherit;color:var(--ink);background:#ffffff10;border:1px solid var(--edge);border-radius:12px;padding:.6rem 1.1rem}
-
-@media (max-width:560px){.cz-dd,.cz-search{max-width:none;flex-basis:100%}.cz-grid{grid-template-columns:repeat(2,1fr);gap:.9rem}.cz-avatar{width:96px;height:96px}.cz-initial{font-size:2.4rem}.cz-card{padding:2.4rem .7rem 1.2rem}}
-@media (prefers-reduced-motion:reduce){.cz-ring,.cz-pop,.cz-dd-menu{animation:none}.cz-card,.cz-links a{transition:none}}
+.team-filters input:focus,.team-filters select:focus{outline:none;border-color:#7fd8ff}
+.team-filters select option{background:#07141d;color:#fff}
+.team-count{text-align:center;opacity:.7;margin:0 0 1.5rem;min-height:1.4em}
+.team-empty{text-align:center;opacity:.8;padding:2rem 0}
+.team-card[hidden]{display:none}
 </style>
 
 <script>
 (function(){
-  var cards=[].slice.call(document.querySelectorAll('.cz-card'));
-  var btn=document.getElementById('czBtn'),dd=document.getElementById('czDd'),menu=document.getElementById('czMenu');
-  var label=document.getElementById('czLabel'),count=document.getElementById('czCount'),dot=document.getElementById('czDot');
-  var search=document.getElementById('czSearch'),status=document.getElementById('czStatus'),empty=document.getElementById('czEmpty');
-  var state={role:'all',q:''};
-
-  var groups=[];
-  try{groups=JSON.parse(document.getElementById('czGroups').getAttribute('data-groups'));if(typeof groups==='string')groups=JSON.parse(groups)}catch(e){groups=[]}
-  if(!Array.isArray(groups))groups=[];
-  if(!groups.length){ // fallback: build groups from the cards themselves
-    var pal=['#8fe3b0','#b58cff','#59e0ff','#ffcf5a','#ff8fb1','#ff9d6b'],seen={};
-    cards.forEach(function(c){(c.dataset.roles?c.dataset.roles.split('|'):[]).forEach(function(r){
-      if(!seen[r]){seen[r]=1;groups.push({name:r,color:pal[groups.length%pal.length]})}})});
-  }
-  var roles=[],counts={},color={};
-  groups.forEach(function(g){roles.push(g.name);counts[g.name]=0;color[g.name]=g.color});
-  cards.forEach(function(c){
-    c._roles=c.dataset.roles?c.dataset.roles.split('|'):[];
-    c._roles.forEach(function(r){if(r in counts)counts[r]++});
-    [].forEach.call(c.querySelectorAll('.cz-chip'),function(ch){ch.style.setProperty('--k',color[ch.dataset.g]||'#7fd8ff')});
-  });
-
-  function opt(value,text,n,col){
-    var li=document.createElement('li');
-    li.className='cz-opt';li.setAttribute('role','option');li.tabIndex=0;li.dataset.value=value;
-    li.style.setProperty('--c',col);
-    li.innerHTML='<span class="cz-dd-dot"></span><b></b><span class="n">'+n+'</span>';
-    li.querySelector('b').textContent=text;
-    li.addEventListener('click',function(){choose(value)});
-    li.addEventListener('keydown',function(e){
-      if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(value)}
-      if(e.key==='ArrowDown'&&li.nextSibling){e.preventDefault();li.nextSibling.focus()}
-      if(e.key==='ArrowUp'){e.preventDefault();(li.previousSibling||btn).focus()}
-    });
-    menu.appendChild(li);
-  }
-  opt('all','Everyone',cards.length,'#7fd8ff');
-  roles.forEach(function(r){opt(r,r,counts[r],color[r])});
-
-  function setOpen(o){dd.dataset.open=o;btn.setAttribute('aria-expanded',o);menu.hidden=!o;if(o){var s=menu.querySelector('[aria-selected="true"]')||menu.firstChild;s&&s.focus()}}
-  btn.addEventListener('click',function(){setOpen(menu.hidden)});
-  document.addEventListener('click',function(e){if(!dd.contains(e.target))setOpen(false)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!menu.hidden){setOpen(false);btn.focus()}});
-
-  function choose(r){state.role=r;setOpen(false);btn.focus();apply()}
+  var cards=[].slice.call(document.querySelectorAll('.team-card'));
+  var search=document.getElementById('teamSearch');
+  var role=document.getElementById('teamRole');
+  var count=document.getElementById('teamCount');
+  var empty=document.getElementById('teamEmpty');
 
   function apply(){
-    var shown=0,q=state.q.trim().toLowerCase();
+    var q=search.value.trim().toLowerCase(), r=role.value, shown=0;
     cards.forEach(function(c){
-      var ok=(state.role==='all'||c._roles.indexOf(state.role)>-1)&&(!q||c.dataset.name.indexOf(q)>-1);
+      var groups=c.dataset.groups?c.dataset.groups.split('|'):[];
+      var ok=(!q||c.dataset.name.indexOf(q)>-1)&&(!r||groups.indexOf(r)>-1);
       c.hidden=!ok;
-      c.style.setProperty('--c',(state.role!=='all'?color[state.role]:color[c._roles[0]])||'#7fd8ff');
-      if(ok){c.style.setProperty('--d',Math.min(shown,14)*35+'ms');c.classList.remove('cz-pop');void c.offsetWidth;c.classList.add('cz-pop');shown++}
+      if(ok)shown++;
     });
-    var col=state.role==='all'?'#7fd8ff':color[state.role];
-    dd.style.setProperty('--c',col);
-    label.textContent=state.role==='all'?'Everyone':state.role;
-    count.textContent=shown;
-    [].forEach.call(menu.children,function(li){li.setAttribute('aria-selected',li.dataset.value===state.role)});
+    count.textContent=(q||r)?('Showing '+shown+(shown===1?' person':' people')):'';
     empty.hidden=shown>0;
-    status.textContent=shown?('Showing '+shown+(shown===1?' person':' people')+(state.role==='all'?'':' in '+state.role)):'';
   }
-
-  search.addEventListener('input',function(){state.q=search.value;apply()});
-  document.getElementById('czReset').addEventListener('click',function(){state.role='all';state.q='';search.value='';apply()});
-
-  // soft spotlight that follows the cursor
-  cards.forEach(function(c){
-    c.addEventListener('pointermove',function(e){
-      var b=c.getBoundingClientRect();
-      c.style.setProperty('--mx',(e.clientX-b.left)+'px');
-      c.style.setProperty('--my',(e.clientY-b.top)+'px');
-    });
-  });
-  apply();
+  search.addEventListener('input',apply);
+  role.addEventListener('change',apply);
 })();
 </script>
 {{ end }}
