@@ -10,7 +10,7 @@ members:
   - name: "Ujjvall Sharma"
     role: "Convener"
     batch: "MS24"
-    groups: ["Active members", "Conveners", "Horn"]
+    groups: ["Active members", "Conveners", "Horn", "Astrophotography"]
     image: "/team/ujjvall.jpeg"
     email: "member@example.com"
     instagram: "https://instagram.com/example"
@@ -68,7 +68,7 @@ members:
   - name: "Devansh"
     role: "Astrophotographer"
     batch: "MS23"
-    groups: ["Active members"]
+    groups: ["Active members","Astrophotography"]
     image: "/team/devansh.jpg"
     email: "member@example.com"
     linkedin: "https://www.linkedin.com/in/devansh-bangar/"
@@ -76,7 +76,7 @@ members:
   - name: "Soumadip Bhowmick"
     role: "Ex Convener (2023-24)"
     batch: "MS22"
-    groups: ["Conveners"]
+    groups: ["Conveners","Website Development","Astrophotography"]
     image: "/team/soumadip.jpg"
     email: "ms22074@iisermohali.ac.in"
     website: "https://soumadipbhowmick.github.io/"
@@ -195,7 +195,7 @@ members:
   - name: "Sriyans Reddy"
     role: "Active Member"
     batch: "MS25"
-    groups: ["Active members"]
+    groups: ["Active members","Astrophotography"]
 
   - name: "Sruja"
     role: "Active Member"
