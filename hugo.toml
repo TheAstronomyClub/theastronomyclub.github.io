@@ -27,7 +27,7 @@ enableRobotsTXT = true
   
 
   [[menu.main]]
-    name = "Gallery"
+    name = "Events"
     url = "/gallery/"
     weight = 2
   [[menu.main]]

@@ -7,8 +7,25 @@ roles: ["Active members", "N1Gα", "Horn", "Conveners", "Website Development", "
 
 
 members:
-  - name: "Ujjvall Sharma"
+
+  - name: "Hiyanshi Nema"
     role: "Convener"
+    batch: "MS25"
+    groups: ["Active members","Conveners"]
+
+  - name: "Amrit Raj"
+    role: "Co-Convener"
+    batch: "MS25"
+    image: "/team/amrit.jpeg"
+    groups: ["Active members", "Horn","Conveners"]
+
+  - name: "Vishesh"
+    role: "Convener"
+    batch: "MS25"
+    groups: ["Active members", "N1Gα", "Horn","Conveners"]
+
+  - name: "Ujjvall Sharma"
+    role: "Ex Convener"
     batch: "MS24"
     groups: ["Active members", "Conveners", "Horn", "Astrophotography"]
     image: "/team/ujjvall.jpeg"
@@ -17,7 +34,7 @@ members:
     linkedin: "https://linkedin.com/in/example"
 
   - name: "Rohan Khade"
-    role: "Co-convener"
+    role: "Ex Co-convener"
     batch: "MS24"
     groups: ["Active members", "Conveners"]
     image: "/team/rohan.jpg"
@@ -174,7 +191,7 @@ members:
 
   - name: "Rahul Kumar"
     role: "Active Member"
-    batch: "MS25"
+    batch: "MS24"
     groups: ["Active members"]
 
   - name: "Raghvendra"
@@ -189,7 +206,7 @@ members:
 
   - name: "Shashvita"
     role: "Active Member"
-    batch: "MS25"
+    batch: "MS24"
     groups: ["Active members"]
 
   - name: "Sriyans Reddy"
@@ -209,13 +226,10 @@ members:
 
   - name: "Vaibhav"
     role: "Active Member"
-    batch: "MS25"
+    batch: "MS24"
     groups: ["Active members"]
 
-  - name: "Vishesh"
-    role: "Active Member"
-    batch: "MS25"
-    groups: ["Active members", "N1Gα", "Horn"]
+
 
   - name: "Yash Sharma"
     role: "Active Member"
