@@ -11,6 +11,7 @@ members:
   - name: "Hiyanshi Nema"
     role: "Convener"
     batch: "MS25"
+    image: "/team/hiyanshi.jpeg"
     groups: ["Active members","Conveners"]
 
   - name: "Amrit Raj"
@@ -20,7 +21,7 @@ members:
     groups: ["Active members", "Horn","Conveners"]
 
   - name: "Vishesh"
-    role: "Convener"
+    role: "Co-Convener"
     batch: "MS25"
     groups: ["Active members", "N1Gα", "Horn","Conveners"]
 
