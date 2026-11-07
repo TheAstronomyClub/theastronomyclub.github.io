@@ -23,6 +23,7 @@ members:
   - name: "Vishesh"
     role: "Co-Convener"
     batch: "MS25"
+    image: "/team/vishesh.jpeg"
     groups: ["Active members", "N1Gα", "Horn","Conveners"]
 
   - name: "Ujjvall Sharma"
@@ -135,10 +136,7 @@ members:
     instagram: "https://instagram.com/example"
     linkedin: "https://linkedin.com/in/example"
 
-  - name: "Amrit Raj"
-    role: "Active Member"
-    batch: "MS25"
-    groups: ["Active members", "Horn",]
+
 
   - name: "Eklavya Rai"
     role: "Active Member"
@@ -150,10 +148,7 @@ members:
     batch: "MS25"
     groups: ["Active members"]
 
-  - name: "Hiyanshi Nema"
-    role: "Active Member"
-    batch: "MS25"
-    groups: ["Active members"]
+ 
 
   - name: "Navya Gupta"
     role: "Active Member"
