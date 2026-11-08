@@ -32,7 +32,6 @@ members:
     groups: ["Active members", "Conveners", "Horn", "Astrophotography"]
     image: "/team/ujjvall.jpeg"
     email: "member@example.com"
-    instagram: "https://instagram.com/example"
     linkedin: "https://linkedin.com/in/example"
 
   - name: "Rohan Khade"
@@ -89,7 +88,7 @@ members:
     batch: "MS23"
     groups: ["Active members","Astrophotography"]
     image: "/team/devansh.jpg"
-    email: "member@example.com"
+    email: "ms23153@iisermohali.ac.in"
     linkedin: "https://www.linkedin.com/in/devansh-bangar/"
 
   - name: "Soumadip Bhowmick"
@@ -112,7 +111,7 @@ members:
   - name: "Harshit Krishna"
     role: "Telescope Committee"
     batch: "MS22"
-    groups: ["Conveners"]
+    groups: ["Active members"]
     image: "/team/harshit.jpg"
     email: "ms22115@iisermohali.ac.in"
     instagram: "https://www.instagram.com/_.the_celestial_cartographer?utm_source=qr&stkn=MWlwMGNlcWVzdzZkMw=="
@@ -123,20 +122,15 @@ members:
     batch: "MS22"
     groups: []
     image: "/team/amarnath.jpg"
-    email: "member@example.com"
-    instagram: "https://instagram.com/example"
-    linkedin: "https://linkedin.com/in/example"
+    email: "ms22070@iisermohali.ac.in"
+    linkedin: "https://www.linkedin.com/in/amarnath-optics?utm_source=share_via&utm_content=profile&utm_medium=member_android"
 
   - name: "Avni"
     role: "Ex Co-convener (2023-24)"
     batch: "MS22"
     groups: ["Conveners"]
     image: "/team/avni.jpg"
-    email: "member@example.com"
-    instagram: "https://instagram.com/example"
-    linkedin: "https://linkedin.com/in/example"
-
-
+    email: "ms22058@iisermohali.ac.in"
 
   - name: "Eklavya Rai"
     role: "Active Member"
@@ -147,8 +141,6 @@ members:
     role: "Active Member"
     batch: "MS25"
     groups: ["Active members"]
-
- 
 
   - name: "Navya Gupta"
     role: "Active Member"
@@ -224,8 +216,6 @@ members:
     role: "Active Member"
     batch: "MS24"
     groups: ["Active members"]
-
-
 
   - name: "Yash Sharma"
     role: "Active Member"
